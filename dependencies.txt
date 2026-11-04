@@ -1,0 +1,12 @@
+# Libraries the bridge server uses internally. They are loaded in a class loader of their own from
+# server/internal/, so the Java code PHP calls never sees them (see docs/server.md, "Internal libraries").
+#
+# The build downloads each file from Maven Central into build/deps/ and checks its SHA-256 before use.
+# To update a library: change the line, run the build once with the old checksum to download it, verify the
+# new file against the checksum published by the project, and put the new checksum here.
+#
+# file                       sha256                                                            url
+jackson-core-3.2.4.jar       494b9f5fccf008042d5a72c5bf00629b144c0ba7362a9864cbb02234c9772651  https://repo1.maven.org/maven2/tools/jackson/core/jackson-core/3.2.4/jackson-core-3.2.4.jar
+bcprov-jdk18on-1.86.jar      2af190b300cbb0b35e248ccf5f4a06b6072030aeb3da7a98ec73abe5b4cb371f  https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/1.86/bcprov-jdk18on-1.86.jar
+bcutil-jdk18on-1.86.jar      1c268e15f785aafb1e4670d8d6e5f856f69475e96c162dadcd1ff9b350e9139f  https://repo1.maven.org/maven2/org/bouncycastle/bcutil-jdk18on/1.86/bcutil-jdk18on-1.86.jar
+bcpkix-jdk18on-1.86.jar      8d8b41a4b149bdae8d331f059a578870954d1e3ff29f8269a9eb3ee19a7e4ef7  https://repo1.maven.org/maven2/org/bouncycastle/bcpkix-jdk18on/1.86/bcpkix-jdk18on-1.86.jar
